@@ -10,7 +10,6 @@ npm i
 npm run dev
 ```
 
-
 src/
 |-- components/
 |   |-- Navbar.tsx

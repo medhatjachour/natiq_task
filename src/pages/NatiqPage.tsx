@@ -14,6 +14,15 @@ const NatiqPage: React.FC = () => {
   const [error, setError] = useState<string | null>("");
 
   const handleEcho = async () => {
+    // Trim the text to remove leading and trailing whitespace
+    const trimmedText = text.trim();
+
+    // Check if the text is empty after trimming
+    if (!trimmedText) {
+      setError("Please enter Arabic text.");
+      return;
+    }
+    // start loading
     setState("loading");
     setError(null);
     try {
@@ -29,9 +38,11 @@ const NatiqPage: React.FC = () => {
       setAudio(audioData);
       setState("output");
     } catch (err) {
-      setError("Failed to fetch audio");
-      //   setState('output');
-      console.log(err);
+        // need to handle the error with the backend
+        //   setError(err instanceof Error ? err.message : String(err));
+        setError('Failed to fetch audio');
+        setState("output");
+        console.log(err);
     }
   };
   //   handle the input change only accept arabic text
@@ -75,25 +86,28 @@ const NatiqPage: React.FC = () => {
       {state === "loading" && <LoadingIndicator />}
       {state === "output" && (
         <div>
-        <div>
-          {audio ? (
-            <audio src={audio} controls autoPlay>
-              <track kind="captions" />
-            </audio>
-          ) : (
-            <p className="text-red-500">{error}</p>
-          )}{" "}
+          <div>
+            {audio ? (
+              <audio src={audio} controls autoPlay>
+                <track kind="captions" />
+              </audio>
+            ) : (
+              <p className="text-red-500">{error}</p>
+            )}{" "}
+          </div>
+
+          <div className="mt-4">
+            <button
+              onClick={() => {
+                setState("initial");
+                setError(null);
+              }}
+              className="border border-blue-500 text-blue-500 font-semibold px-4 py-2 rounded"
+            >
+              Back to input
+            </button>
+          </div>
         </div>
-        
-      <div className="mt-4">
-      <button
-        onClick={() => setState("initial")}
-        className="border border-blue-500 text-blue-500 font-semibold px-4 py-2 rounded"
-      >
-        Back to input
-      </button>
-    </div>
-    </div>
       )}
     </div>
   );
