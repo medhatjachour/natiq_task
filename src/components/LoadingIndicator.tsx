@@ -1,18 +1,18 @@
-import React from "react";
-import { Audio } from "react-loader-spinner";
-const LoadingIndicator: React.FC = () => (
-  <div className="items-center">
-   <p> Loading...</p>
-    <Audio
-      height="80"
-      width="80"
-      radius="9"
-      color="green"
-      ariaLabel="loading"
-      wrapperStyle
-      wrapperClass
-    />
-  </div>
-);
+
+import React from 'react';
+
+interface LoadingIndicatorProps {
+  isVisible: boolean;
+}
+
+const LoadingIndicator: React.FC<LoadingIndicatorProps> = ({ isVisible }) => {
+  if (!isVisible) return null;
+  
+  return (
+    <div className="loading-indicator">
+      Loading...
+    </div>
+  );
+};
 
 export default LoadingIndicator;

@@ -83,7 +83,7 @@ const NatiqPage: React.FC = () => {
           </button>
         </div>
       )}
-      {state === "loading" && <LoadingIndicator />}
+      {state === "loading" && <LoadingIndicator isVisible={true}/>}
       {state === "output" && (
         <div>
           <div>

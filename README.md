@@ -1,6 +1,6 @@
 ## Getting Started
 
-Clone this repository to your local machine.
+- Clone this repository to your local machine.
 
 
 ```bash
@@ -10,14 +10,30 @@ npm i
 npm run dev
 ```
 
-src/
-|-- components/
-|   |-- Navbar.tsx
-|   |-- LoadingIndicator.tsx
-|-- pages/
-|   |-- HomePage.tsx
-|   |-- AboutPage.tsx
-|   |-- NatiqPage.tsx
-|-- App.tsx
-|-- index.tsx
-|-- api.ts
+- To start docker 
+
+```bash
+docker build -t natiq-app.
+```
+
+# App structure
+
+natiq_task/
+|-- src/
+|   |-- components/
+|   |   |-- LoadingIndicator.tsx
+|   |-- pages/
+|   |   |-- HomePage.tsx
+|   |   |-- AboutPage.tsx
+|   |   |-- NatiqPage.tsx
+|-- public/
+|   |-- index.html
+|   |-- favicon.ico
+|-- package.json
+|-- package-lock.json
+|-- index.css
+|-- vite.config.js
+|-- Dockerfile
+|-- .dockerignore
+|-- .gitignore
+|-- tailwind.config.js
