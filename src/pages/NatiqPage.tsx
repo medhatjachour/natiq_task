@@ -30,7 +30,7 @@ const NatiqPage: React.FC = () => {
       const words = text.trim().split(" ");
       const lastWord = words[words.length - 1];
       // add the last word to the actual text twice to repeat it 3 times
-      const echoedText = `${text} ${lastWord} ${lastWord} `;
+      const echoedText = `${text} ${lastWord} ${lastWord}`;
       const result = await callNatiq(echoedText);
       // handle the audio
       const base64Audio = result.wave.replace(/-/g, "+").replace(/_/g, "/");
@@ -88,7 +88,7 @@ const NatiqPage: React.FC = () => {
         <div>
           <div>
             {audio ? (
-              <audio src={audio} controls autoPlay>
+              <audio src={audio} controls autoPlay data-testid="audio">
                 <track kind="captions" />
               </audio>
             ) : (
