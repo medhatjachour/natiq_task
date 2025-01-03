@@ -11,9 +11,8 @@ npm run dev
 ```
 
 - To to run test
-
 ```bash
-docker build -t natiq-app.
+npm test
 ```
 
 - To start docker 
@@ -26,13 +25,6 @@ docker build -t natiq-app.
 
 natiq_task/
 |-- src/
-|-- index.css
-|-- api.ts
-|-- main.tsx
-|-- main.css
-|-- app.tsx
-|-- app.css
-|-- vite-env.d.ts
 |   |-- components/
 |   |   |-- Navbar.tsx
 |   |   |-- LoadingIndicator.tsx
@@ -41,10 +33,17 @@ natiq_task/
 |   |   |-- HomePage.tsx
 |   |   |-- AboutPage.tsx
 |   |   |-- NatiqPage.tsx
-|   |   |-- __tests__/ 
+|   |   |-- __tests__/
 |   |       |-- NatiqPage.test.tsx
 |-- assets/
 |   |-- react.svg
+|-- index.css
+|-- api.ts
+|-- main.tsx
+|-- main.css
+|-- app.tsx
+|-- app.css
+|-- vite-env.d.ts
 |-- package.json
 |-- eslint.config.js
 |-- package-lock.json
@@ -53,7 +52,7 @@ natiq_task/
 |-- .dockerignore
 |-- .gitignore
 |-- tailwind.config.js
-|-- .babelrc 
-|-- jest.config.cjs 
+|-- .babelrc
+|-- jest.config.cjs
 |-- jest-setup.cjs
 |-- index.html
